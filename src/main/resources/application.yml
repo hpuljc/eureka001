@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: marketcenter
+    password: Leap
+    url: jdbc:mysql://10.192.1.113:3306/marketcenter?allowMultiQueries=true&characterEncoding=utf-8&useUnicode=true
+  application:
+    name: eureka-server
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://peer2:7002/eureka/,http://peer3:7003/eureka/
+
